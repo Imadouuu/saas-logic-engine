@@ -1,0 +1,257 @@
+{
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "hireMe": "Hire Me"
+  },
+  "hero": {
+    "title": "AI Animation & SaaS Automation",
+    "subtitle": "Architecting intelligent automation systems for enterprise-scale innovation",
+    "description": "Specializing in AI-driven workflows, real-time animation systems, and enterprise automation infrastructure. Building the computational backbone for next-generation SaaS platforms.",
+    "cta": "Start Your Automation Journey",
+    "scroll": "Scroll to explore"
+  },
+  "services": {
+    "title": "Service Matrix",
+    "subtitle": "Comprehensive automation & AI solutions",
+    "details": [
+      {
+        "id": 1,
+        "title": "AI-Powered Animation Systems",
+        "description": "Real-time, adaptive animation rendering using machine learning. Transforms static content into dynamic, responsive visual experiences that evolve with user behavior.",
+        "items": [
+          "AI character animation & motion synthesis",
+          "Product showcase visualizations",
+          "Real-time rendering pipelines",
+          "Export-ready for web/video distribution"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Enterprise SaaS Automation",
+        "description": "End-to-end workflow automation tailored for B2B platforms. Eliminates manual processes, reduces operational overhead, and scales seamlessly with your user base.",
+        "items": [
+          "React/TypeScript frontend architecture",
+          "Node.js/Python backend scalability",
+          "Database optimization & caching",
+          "CI/CD pipelines & infrastructure"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Workflow Optimization",
+        "description": "Architectural redesign of business processes. Leverages AI to identify bottlenecks, predict failures, and suggest intelligent automation pathways.",
+        "items": [
+          "Process mapping & workflow design",
+          "API integrations & data pipelines",
+          "n8n & Make automation workflows",
+          "ROI tracking & optimization"
+        ]
+      }
+    ]
+  },
+  "innovation": {
+    "title": "Innovation Lab",
+    "subtitle": "Pioneering automation technologies",
+    "description": "Where cutting-edge AI research meets practical enterprise engineering. Exploring emerging patterns in autonomous systems, real-time processing, and computational efficiency.",
+    "case1_title": "SaaS Dashboard Optimization",
+    "case1_category": "Backend Performance",
+    "case1_challenge": "Enterprise platform loading dashboard in 8+ seconds, users abandoning sessions",
+    "case1_solution": "Implemented Redis caching layer, query optimization, and connection pooling",
+    "case1_result": "Reduced load time from 8.3s → 1.2s (85% improvement). Monthly cost reduced by 40%.",
+    "case2_title": "AI Animation Pipeline",
+    "case2_category": "AI/Motion",
+    "case2_challenge": "Manual animation production taking 2 weeks per project, high costs",
+    "case2_solution": "Built automated pipeline using AI generation + custom post-processing workflows",
+    "case2_result": "2-week projects now completed in 2-3 days. Cost reduction: 60%.",
+    "case3_title": "Workflow Automation Suite",
+    "case3_category": "Automation",
+    "case3_challenge": "Client spending 150+ hours/month on data entry and manual processing",
+    "case3_solution": "Designed n8n workflows integrating CRM, accounting, and storage systems",
+    "case3_result": "Automated 95% of repetitive tasks. From 150h/month → 5h/month.",
+    "case4_title": "Real-time Collaboration Platform",
+    "case4_category": "Full-Stack",
+    "case4_challenge": "Need for multi-user editing with conflict resolution and offline support",
+    "case4_solution": "Built operational transform (OT) syncing engine + Service Workers",
+    "case4_result": "Seamless real-time collaboration for 50+ concurrent users",
+    "features": {
+      "cta": "Explore the lab"
+    }
+  },
+  "form": {
+    "title": "Ready to Transform Your Workflows?",
+    "subtitle": "Let's architect your automation infrastructure",
+    "name": "Your Name",
+    "email": "Email Address",
+    "company": "Company Name",
+    "message": "Tell us about your automation challenges",
+    "submit": "Schedule Architecture Review",
+    "submitting": "Submitting...",
+    "success": "Message sent successfully! We'll be in touch.",
+    "error": "Something went wrong. Please try again."
+  },
+  "floatingCta": {
+    "text": "Ready to automate?",
+    "button": "Let's talk"
+  },
+  "saasROI": {
+    "title": "Operational Efficiency Audit",
+    "subtitle": "Engineering-grade analysis revealing your organization's true operational cost structure",
+    "systemInputs": "System Parameters",
+    "energyLeakWarning": "Measuring friction loss and circuit efficiency",
+    "weeklyHours": "Weekly Manual Hours",
+    "people": "people",
+    "teamSize": "Team Size",
+    "errorRate": "Error Rate",
+    "hourlyRate": "Hourly Labor Rate",
+    "projectionYear": "Tech Debt Projection",
+    "year": "Year",
+    "months": "months",
+    "years": "years",
+    "systemStatus": "System Status",
+    "optimized": "OPTIMIZED",
+    "heatingUp": "HEATING UP",
+    "critical": "CRITICAL",
+    "circuitEfficiency": "Circuit Efficiency",
+    "totalManualCost": "Total Manual Operation Cost",
+    "eliminated": "Eliminated by automation",
+    "annualBurden": "Annual operational burden on growth",
+    "timeRecovered": "Temporal Capital Recovered",
+    "strategicCapacity": "Freed for strategic initiatives",
+    "capitalReinvestment": "Capital Reinvestment Potential",
+    "potentialAnnual": "Per year by optimizing",
+    "annuallyAvailable": "Available for growth deployment",
+    "paybackPeriod": "ROI Payback Timeline",
+    "fullRecovery": "To full investment recovery",
+    "24MonthProjection": "24-Month Cost Trajectory",
+    "operationalCost": "Cost ($)",
+    "manualScaling": "Manual Operations",
+    "imadAutomation": "Imad's Optimized System",
+    "cumulativeRecovery": "Capital Recovered",
+    "chartCaption": "Exponential friction loss in manual scaling vs. linear optimization in automated systems",
+    "applyOptimization": "Apply Imad's Logic",
+    "systemOptimized": "✓ System Optimized",
+    "ctaCaption": "See the mathematical case for operational transformation",
+    "criticalAlert": "CRITICAL: System Overload Detected",
+    "overloadMessage": "Your organization is operating beyond sustainable efficiency thresholds. Manual scaling will compound exponentially. Immediate intervention required.",
+    "verdictTitle": "The Verdict",
+    "verdictMessage": "The math is clear: Inefficiency is your highest hidden tax. You are currently running a system with [FRICTION]% friction loss. My architecture doesn't just save money; it reclaims your company's future. Let's stabilize your digital circuit today.",
+    "verdictCTA": "Schedule Optimization Review",
+    "verdictContactSubject": "Urgent: Optimization Required for [TEAM] People",
+    "verdictSignature": "System Architect: Imad Nasseri"
+  },
+  "receipt": {
+    "transmitting": "Data Transmitting...",
+    "title": "Operational Audit Received",
+    "timestamp": "Digital Receipt • {{date}}",
+    "personalMessage": "Hello {{name}}, Your operational audit has been formally logged. My system has identified a recovery opportunity of {{hours}} strategic hours for your organization. This represents capital currently locked in manual inefficiency.",
+    "automationBenefit": "Automation Impact",
+    "recoveredCapacity": "{{hours}} hours per year freed for strategic initiatives",
+    "expectedOutcome": "Strategic Shift",
+    "strategicShift": "From operational firefighting to architectural innovation",
+    "frictionLoss": "Friction Loss",
+    "currentSystemLoss": "Energy currently leaked",
+    "annualCost": "Annual Cost",
+    "operationalBurden": "Manual operations burden",
+    "capitalRecovered": "Capital Recovered",
+    "yearOneRecovery": "Year one ROI impact",
+    "paybackTimeline": "Payback Period",
+    "months": "months",
+    "toROI": "To achieve full ROI",
+    "autoResponderPreview": "Auto-Responder Confirmation",
+    "subject": "Subject",
+    "subjectLine": "Optimization Protocol Initiated - {{name}}",
+    "messageGreeting": "Hello {{name}},",
+    "messageBody": "I have received your operational audit. My system has logged a potential recovery of {{hours}} hours for your team. I am currently reviewing the architectural bottlenecks you mentioned.",
+    "messageClosure": "Expect a strategic briefing within 24 hours.",
+    "messageSigned": "— Imad Nasseri, System Architect",
+    "nextSteps": "Next Steps",
+    "step1": "Check your email for the auto-responder confirmation within moments",
+    "step2": "Prepare your team details and workflow documentation for our 24-hour analysis",
+    "step3": "Schedule your strategic consultation call via the confirmation email link",
+    "downloadPDF": "Download Summary Report",
+    "closeModal": "Return to Dashboard",
+    "closingNote": "This modal confirms your audit submission. Your data is encrypted and secure. The system architect will contact you within 24 hours via email."
+  },
+  "footer": {
+    "description": "Building intelligent automation systems for the future",
+    "contact": "Contact",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Get in touch",
+    "copyright": "© 2024 Imad Nasseri. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated: March 2024",
+    "introduction": "At Imad Nasseri Digital Architecture, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information.",
+    "sections": [
+      {
+        "title": "1. Data Collection",
+        "content": "We collect personal information through our contact forms and consultation requests, including your name, email address, company name, and project details. This information is essential for understanding your automation challenges and providing tailored solutions."
+      },
+      {
+        "title": "2. AI Processing & Analysis",
+        "content": "Your project information may be processed through our AI-powered analysis systems to generate optimization insights and automation recommendations. We use machine learning algorithms to identify patterns in your workflow requirements and suggest intelligent automation pathways. This processing is conducted securely and is necessary to deliver our advanced automation services."
+      },
+      {
+        "title": "3. Data Security",
+        "content": "We implement industry-standard encryption (TLS 1.3) for all data transmission. Your information is stored in secure databases with restricted access. We do not share your personal data with third parties without explicit consent."
+      },
+      {
+        "title": "4. Data Retention",
+        "content": "We retain your personal data for as long as necessary to fulfill the stated purposes. You may request deletion of your data at any time by contacting us at imadnasri15@gmail.com."
+      },
+      {
+        "title": "5. Your Rights",
+        "content": "You have the right to access, correct, or delete your personal information. You also have the right to opt-out of AI-powered analysis while retaining basic support services. Contact us to exercise these rights."
+      },
+      {
+        "title": "6. International Compliance",
+        "content": "This service is provided from Sétif, Algeria, and complies with international data protection standards including GDPR principles for European users."
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: March 2024",
+    "introduction": "Welcome to Imad Nasseri Digital Architecture. By engaging with our automation and AI services, you agree to these Terms of Service.",
+    "sections": [
+      {
+        "title": "1. Intellectual Property Rights",
+        "content": "All SaaS architectures, AI animation systems, automation workflows, and custom code developed through our services are owned by you upon full payment. However, underlying methodologies, frameworks, and reusable components remain our intellectual property. You are granted a non-exclusive license to use these components in your projects."
+      },
+      {
+        "title": "2. AI-Generated Assets",
+        "content": "AI-generated animations, visualizations, and content created during our engagement are delivered to you with full usage rights. You may use, modify, and distribute these assets in your commercial projects. We retain the right to use anonymized workflow patterns for service improvement."
+      },
+      {
+        "title": "3. Service Scope & Limitation",
+        "content": "Our services are provided on a best-effort basis. We guarantee technical competence and professional execution, but cannot guarantee specific business outcomes. You are responsible for testing all automation systems in your environment before production deployment."
+      },
+      {
+        "title": "4. Payment & Terms",
+        "content": "Project pricing is discussed during the consultation phase. Payment terms are agreed upon before work begins. Deposits may be required for larger projects. Refunds are issued only for incomplete work."
+      },
+      {
+        "title": "5. Confidentiality",
+        "content": "We maintain strict confidentiality of your business processes and project specifications. We do not disclose client information to third parties without permission, except as required by law or for direct project delivery purposes."
+      },
+      {
+        "title": "6. Jurisdiction & Dispute Resolution",
+        "content": "These terms are governed by the laws of Sétif, Algeria, with international disputes resolved through arbitration under international commercial law. By engaging our services, you consent to this jurisdiction and dispute resolution process."
+      },
+      {
+        "title": "7. Liability Limitation",
+        "content": "Our total liability for any claim arising from these services shall not exceed the amount paid for the service in question. We are not liable for indirect, consequential, or punitive damages."
+      },
+      {
+        "title": "8. Modification of Terms",
+        "content": "We reserve the right to modify these terms at any time. Continued use of our services indicates acceptance of updated terms. Material changes will be communicated to active clients."
+      }
+    ]
+  }
+}
