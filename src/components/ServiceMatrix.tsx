@@ -29,7 +29,7 @@ export default function ServiceMatrix() {
   const services = t('services.details', { returnObjects: true }) as any[]
 
   return (
-    <section className="relative w-full py-20 md:py-32 px-4 md:px-8 bg-black/20">
+    <section id="services" className="relative w-full py-20 md:py-32 px-4 md:px-8 bg-black/20">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div

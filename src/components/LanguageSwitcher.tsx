@@ -57,7 +57,7 @@ export default function LanguageSwitcher() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileHover={{ opacity: 1, y: 0 }}
-          className="absolute right-0 mt-2 w-32 bg-black/90 backdrop-blur-md rounded-lg border border-cyan-glow/20 py-2 hidden group-hover:block z-50"
+          className="absolute right-0 mt-2 w-32 bg-black/90 backdrop-blur-md rounded-lg border border-cyan-glow/20 py-2 hidden group-hover:block z-40"
         >
           <motion.button
             whileHover={{ backgroundColor: 'rgba(0, 217, 255, 0.1)' }}

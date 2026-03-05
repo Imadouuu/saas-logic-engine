@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useROICalculator } from '../hooks/useROICalculator'
+import { SkeletonChart } from './SkeletonLoaders'
+
+// Lazy load the chart component (reduces main bundle by ~40-50KB)
+const LazyROIChart = React.lazy(() => import('./LazyROIChart'))
 
 // Particle for shattering effect
 const Particle: React.FC<{ x: number; y: number; delay: number }> = ({
@@ -331,12 +334,13 @@ const SaaSROIEngine: React.FC<{
               {[1, 2, 3, 4, 5].map((year) => (
                 <button
                   key={year}
-                  onClick={() => setTechnicalDebtYear(year)}
+                  type="button"
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setTechnicalDebtYear(year) }}
                   className={`flex-1 py-2 px-4 rounded-lg font-semibold transition-all ${
                     technicalDebtYear === year
                       ? 'bg-[#00D9FF] text-[#030303]'
                       : 'bg-[#1A1A2E] text-gray-300 hover:bg-[#00D9FF]/20'
-                  }`}
+                  } pointer-events-auto`}
                 >
                   {year}
                 </button>
@@ -480,72 +484,13 @@ const SaaSROIEngine: React.FC<{
         transition={{ duration: 0.8 }}
         className="backdrop-blur-xl bg-gradient-to-br from-[#1A1A2E]/80 to-[#030303]/80 border border-[#00D9FF]/20 rounded-2xl p-8 shadow-2xl mb-12"
       >
-        <h3 className="text-2xl font-bold text-[#00D9FF] mb-8">
-          {t('saasROI.24MonthProjection') || '24-Month Cost Trajectory'}
-        </h3>
-
-        <ResponsiveContainer width="100%" height={400}>
-          <LineChart
+        <Suspense fallback={<SkeletonChart />}>
+          <LazyROIChart
             data={chartData}
-            margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" stroke="#00D9FF20" />
-            <XAxis
-              dataKey="month"
-              label={{
-                value: t('saasROI.months') || 'Months',
-                position: 'insideBottomRight',
-                offset: -5,
-              }}
-              stroke="#666"
-            />
-            <YAxis
-              label={{
-                value: t('saasROI.operationalCost') || 'Cost ($)',
-                angle: -90,
-                position: 'insideLeft',
-              }}
-              stroke="#666"
-            />
-            <Tooltip
-              formatter={(value: number) => formatCurrency(value)}
-              contentStyle={{
-                backgroundColor: '#030303',
-                border: '1px solid #00D9FF',
-                borderRadius: '8px',
-              }}
-            />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="manual"
-              stroke="#FF6B6B"
-              name={t('saasROI.manualScaling') || 'Manual Operations'}
-              strokeWidth={2}
-              dot={false}
-              isAnimationActive={true}
-            />
-            <Line
-              type="monotone"
-              dataKey="automated"
-              stroke="#00D9FF"
-              name={t('saasROI.imadAutomation') ||
-                'Imad\'s Optimized System'}
-              strokeWidth={2}
-              dot={false}
-              isAnimationActive={true}
-            />
-            <Line
-              type="monotone"
-              dataKey="savings"
-              stroke="#4ECDC4"
-              name={t('saasROI.cumulativeRecovery') || 'Capital Recovered'}
-              strokeWidth={2}
-              dot={false}
-              isAnimationActive={true}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+            locale={i18n.language}
+            translationPrefix="saasROI"
+          />
+        </Suspense>
 
         <p className="text-center text-gray-400 text-sm mt-6">
           {t('saasROI.chartCaption') ||

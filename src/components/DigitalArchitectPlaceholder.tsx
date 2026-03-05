@@ -110,20 +110,7 @@ export default function DigitalArchitectPlaceholder({
               }}
             />
 
-            {/* Text overlay - "AI is thinking" state */}
-            <motion.div
-              className="absolute bottom-8 text-center text-cyan-glow text-sm font-mono"
-              animate={{
-                opacity: [0.4, 1, 0.4],
-              }}
-              transition={{
-                duration: 2,
-                ease: 'easeInOut',
-                repeat: Infinity,
-              }}
-            >
-              <div>Initializing Neural Architecture...</div>
-            </motion.div>
+
           </div>
         </div>
 

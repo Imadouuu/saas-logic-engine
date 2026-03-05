@@ -1,17 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense, lazy } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { ROIMetrics } from './hooks/useROICalculator'
 import Hero from './components/Hero'
 import ServiceMatrix from './components/ServiceMatrix'
-import InnovationLab from './components/InnovationLab'
-import SaaSROIEngine from './components/SaaSROIEngine'
+import About from './components/About'
 import Footer from './components/Footer'
 import LeadGenForm from './components/LeadGenForm'
-import FloatingCTA from './components/FloatingCTA'
+import WhatsAppButton from './components/WhatsAppButton'
 import Navigation from './components/Navigation'
-import PrivacyPolicy from './components/PrivacyPolicy'
-import TermsOfService from './components/TermsOfService'
+import MagneticCursor from './components/MagneticCursor'
+import { SkeletonROIEngine } from './components/SkeletonLoaders'
+import SystemPulse from './components/SystemPulse'
+import CircuitToCodeTransition from './components/CircuitToCodeTransition'
+import TerminalVisualEffects from './components/TerminalVisualEffects'
+import BackgroundRadialMask from './components/BackgroundRadialMask'
+import AIAutomationShowcase from './components/AIAutomationShowcase'
+
+// Lazy load heavy components with code splitting
+const InnovationLab = lazy(() => import('./components/InnovationLab'))
+const SaaSROIEngine = lazy(() => import('./components/SaaSROIEngine'))
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'))
+const TermsOfService = lazy(() => import('./components/TermsOfService'))
 
 type PageType = 'home' | 'privacy' | 'terms'
 
@@ -54,22 +64,56 @@ function App() {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
+      {/* Terminal Visual Effects - CRT Scanlines & Flicker */}
+      <TerminalVisualEffects />
+
+      {/* Global Radial Background Mask - Subtle depth from center outward */}
+      <BackgroundRadialMask />
+
+      {/* Magnetic Cursor Effect */}
+      <MagneticCursor />
+
       <Navigation onContactClick={() => setIsFormOpen(true)} />
       
-      <FloatingCTA onOpenForm={() => setIsFormOpen(true)} />
+      {/* System Pulse - Real-time metrics header */}
+      <SystemPulse />
+      
+      <WhatsAppButton />
 
       {/* Conditional Page Rendering */}
       {currentPage === 'home' && (
         <div className="relative z-10">
           <Hero onContactClick={() => setIsFormOpen(true)} />
           <ServiceMatrix />
-          <InnovationLab />
-          <SaaSROIEngine 
-            onOpenFormWithMetrics={(metrics) => {
-              setRoiMetrics(metrics)
-              setIsFormOpen(true)
-            }}
-          />
+          <About />
+          
+          {/* AI Automation Showcase */}
+          <AIAutomationShowcase onContactClick={() => setIsFormOpen(true)} />
+          
+          {/* Circuit-to-Code Transition Component */}
+          <CircuitToCodeTransition />
+          
+          {/* Lazy-loaded Innovation Lab with Suspense boundary */}
+          <Suspense fallback={null}>
+            <InnovationLab />
+          </Suspense>
+          
+          {/* Lazy-loaded ROI Engine with Skeleton loader */}
+          <Suspense fallback={
+            <div className="w-full px-4 py-24">
+              <div className="max-w-6xl mx-auto">
+                <SkeletonROIEngine />
+              </div>
+            </div>
+          }>
+            <SaaSROIEngine 
+              onOpenFormWithMetrics={(metrics) => {
+                setRoiMetrics(metrics)
+                setIsFormOpen(true)
+              }}
+            />
+          </Suspense>
+
           <Footer
             onContactClick={() => setIsFormOpen(true)}
             onNavigateToPage={handleNavigateToPage}
@@ -79,7 +123,9 @@ function App() {
 
       {currentPage === 'privacy' && (
         <div className="relative z-10">
-          <PrivacyPolicy onBack={() => handleNavigateToPage('home')} />
+          <Suspense fallback={null}>
+            <PrivacyPolicy onBack={() => handleNavigateToPage('home')} />
+          </Suspense>
           <Footer
             onContactClick={() => setIsFormOpen(true)}
             onNavigateToPage={handleNavigateToPage}
@@ -89,7 +135,9 @@ function App() {
 
       {currentPage === 'terms' && (
         <div className="relative z-10">
-          <TermsOfService onBack={() => handleNavigateToPage('home')} />
+          <Suspense fallback={null}>
+            <TermsOfService onBack={() => handleNavigateToPage('home')} />
+          </Suspense>
           <Footer
             onContactClick={() => setIsFormOpen(true)}
             onNavigateToPage={handleNavigateToPage}
@@ -97,8 +145,10 @@ function App() {
         </div>
       )}
 
+      {/* Form Modal */}
       {isFormOpen && (
         <motion.div
+          data-testid="contact-form-modal"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

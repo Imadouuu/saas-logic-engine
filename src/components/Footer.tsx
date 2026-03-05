@@ -55,8 +55,9 @@ export default function Footer({ onContactClick, onNavigateToPage }: FooterProps
             <motion.button
               whileHover={{ x: i18n.language === 'ar' ? -5 : 5 }}
               whileTap={{ scale: 0.98 }}
-              onClick={onContactClick}
-              className="px-8 py-3 bg-cyan-glow text-black font-bold rounded-lg flex items-center gap-2 hover:bg-cyan-glow/90 transition-all"
+              type="button"
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); onContactClick() }}
+              className="px-8 py-3 bg-cyan-glow text-black font-bold rounded-lg flex items-center gap-2 hover:bg-cyan-glow/90 transition-all pointer-events-auto"
             >
               Start Your Project
               <ArrowUpRight className="w-4 h-4" />
@@ -74,24 +75,42 @@ export default function Footer({ onContactClick, onNavigateToPage }: FooterProps
                   key={link.name}
                   whileHover={{ x: i18n.language === 'ar' ? -5 : 5 }}
                   className={isEmail ? 'cursor-pointer' : ''}
-                  onClick={isEmail ? link.onClick : undefined}
+                  onClick={isEmail ? (e) => { e.preventDefault(); e.stopPropagation(); link.onClick?.(); } : undefined}
                 >
-                  <a
-                    href={!isEmail ? link.href : undefined}
-                    target={!isEmail ? '_blank' : undefined}
-                    rel={!isEmail ? 'noopener noreferrer' : undefined}
-                    className="group flex items-start gap-4 p-4 rounded-lg border border-cyan-glow/20 hover:border-cyan-glow/50 hover:bg-cyan-glow/5 transition-all"
-                  >
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-lg bg-cyan-glow/10 flex items-center justify-center group-hover:bg-cyan-glow/20 transition-colors">
-                        <IconComponent className="w-5 h-5 text-cyan-glow" />
+                  {!isEmail ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-4 p-4 rounded-lg border border-cyan-glow/20 hover:border-cyan-glow/50 hover:bg-cyan-glow/5 transition-all pointer-events-auto"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-lg bg-cyan-glow/10 flex items-center justify-center group-hover:bg-cyan-glow/20 transition-colors">
+                          <IconComponent className="w-5 h-5 text-cyan-glow" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-white mb-1">{link.name}</h4>
-                      <p className="text-sm text-gray-400 truncate">{link.label}</p>
-                    </div>
-                  </a>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-bold text-white mb-1">{link.name}</h4>
+                        <p className="text-sm text-gray-400 truncate">{link.label}</p>
+                      </div>
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); link.onClick?.(); }}
+                      className="group flex items-start gap-4 p-4 rounded-lg border border-cyan-glow/20 hover:border-cyan-glow/50 hover:bg-cyan-glow/5 transition-all w-full text-left pointer-events-auto"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 rounded-lg bg-cyan-glow/10 flex items-center justify-center group-hover:bg-cyan-glow/20 transition-colors">
+                          <IconComponent className="w-5 h-5 text-cyan-glow" />
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-bold text-white mb-1">{link.name}</h4>
+                        <p className="text-sm text-gray-400 truncate">{link.label}</p>
+                      </div>
+                    </button>
+                  )}
                 </motion.div>
               )
             })}
@@ -107,14 +126,16 @@ export default function Footer({ onContactClick, onNavigateToPage }: FooterProps
             </div>
             <div className={`flex gap-6 ${i18n.language === 'ar' ? 'flex-row-reverse' : ''}`}>
               <motion.button
-                onClick={() => onNavigateToPage?.('privacy')}
-                className="hover:text-cyan-glow transition-colors hover:underline"
+                type="button"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); onNavigateToPage?.('privacy') }}
+                className="hover:text-cyan-glow transition-colors hover:underline pointer-events-auto"
               >
                 {t('footer.privacyPolicy')}
               </motion.button>
               <motion.button
-                onClick={() => onNavigateToPage?.('terms')}
-                className="hover:text-cyan-glow transition-colors hover:underline"
+                type="button"
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); onNavigateToPage?.('terms') }}
+                className="hover:text-cyan-glow transition-colors hover:underline pointer-events-auto"
               >
                 {t('footer.termsOfService')}
               </motion.button>

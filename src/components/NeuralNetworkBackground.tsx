@@ -138,8 +138,9 @@ export default function NeuralNetworkBackground() {
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    // Initialize particles as "data packets" in the automation network
-    const particleCount = 55 // Optimal coverage for automation network
+    // Adaptive particle count based on device capability
+    const isMobile = window.innerWidth < 768
+    const particleCount = isMobile ? 25 : 55 // Reduce by 55% on mobile for performance
     const particles: PhysicsParticle[] = []
 
     for (let i = 0; i < particleCount; i++) {

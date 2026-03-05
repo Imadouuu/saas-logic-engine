@@ -27,7 +27,12 @@ export default function FloatingCTA({ onOpenForm }: FloatingCTAProps) {
       }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      onClick={onOpenForm}
+      type="button"
+      onClick={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        onOpenForm()
+      }}
       className={`fixed bottom-8 z-40 px-6 py-3 bg-cyan-glow text-black font-bold rounded-lg flex items-center gap-2 shadow-lg shadow-cyan-glow/50 hover:shadow-cyan-glow/70 hover:bg-cyan-glow/90 transition-all cursor-pointer ${i18n.language === 'ar' ? 'left-8' : 'right-8'}`}
     >
       <Mail className="w-5 h-5" />

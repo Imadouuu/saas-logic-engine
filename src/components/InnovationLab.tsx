@@ -67,7 +67,7 @@ export default function InnovationLab() {
   const { t, i18n } = useTranslation()
 
   return (
-    <section className={`relative w-full py-20 md:py-32 px-4 md:px-8 ${i18n.language === 'ar' ? 'rtl' : 'ltr'}`}>
+    <section id="work" className={`relative w-full py-20 md:py-32 px-4 md:px-8 ${i18n.language === 'ar' ? 'rtl' : 'ltr'}`}>
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <motion.div
